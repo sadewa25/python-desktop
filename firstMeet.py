@@ -16,7 +16,7 @@ Created on Sun May 22 19:42:13 2022
 import sys
 
 from PyQt5.QtCore import QSize, Qt
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QHBoxLayout, QWidget, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QHBoxLayout, QWidget, QVBoxLayout, QLineEdit
 
 # Subclass QMainWindow to customize your application's main window
 
@@ -43,16 +43,21 @@ class MainWindow(QWidget):
 
     def verticalLayout(self):
         layout = QVBoxLayout()
-        layout.addWidget(QPushButton('Top'))
-        layout.addWidget(QPushButton('Center'))
-        layout.addWidget(QPushButton('Bottom'))
+        panjang = QLineEdit()
+        panjang.setPlaceholderText('Panjang')
+        lebar = QLineEdit()
+        lebar.setPlaceholderText('Lebar')
+        layout.addWidget(panjang)
+        layout.addWidget(lebar)
+        layout.addWidget(QPushButton('Hitung'))
         return layout
 
 
 app = QApplication(sys.argv)
 
-window = MainWindow('horizontal')
-# window = MainWindow('vertical')
+# window = MainWindow('form')
+window = MainWindow('vertical')
+
 window.show()
 
 app.exec()
