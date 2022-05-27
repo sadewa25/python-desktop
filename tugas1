@@ -21,6 +21,13 @@ class MainWindow(QWidget):
 
     def verticalLayout(self):
         layout = QVBoxLayout()
+        panjang = QLineEdit()
+        panjang.setPlaceholderText('Panjang')
+        lebar = QLineEdit()
+        lebar.setPlaceholderText('Lebar')
+        layout.addWidget(panjang)
+        layout.addWidget(lebar)
+        layout.addWidget(QPushButton('Hitung'))
         return layout
     
     def formLayout(self):
